@@ -1,0 +1,38 @@
+.container-drag {
+  text-align: center;
+}
+
+li.colocaraqui { 
+  background: rgb(40, 30, 190);
+  border: dashed 1px #000;
+  list-style-type: none;
+}
+li.colocaraqui:before {
+  content: "Colocar aquí";
+  /* color: #f3e30a; */
+  color: #da2310;
+}
+
+ul {
+  list-style: none; 
+  margin:0; padding:0
+}
+
+li {
+  padding: 5px; 
+  /*background:#eee; */
+  cursor: move;
+  list-style-type: none;
+}
+
+li a:hover {
+  border-bottom: 2px solid rgb(150,30,200) !important;
+  /* text-decoration: unset !important; */
+  color: rgb(150,30,200) !important;
+  font-weight: 600 !important;
+}
+
+li a {
+  display: inline-block !important;
+}
+
