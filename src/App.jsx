@@ -1,13 +1,10 @@
+// Modulos React y otros
 import React, { Component } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
-// import DragDrop from './components/DragDrop.jsx'
-// import DragAndDrop from './components/DragAndDrop.jsx'
-// import Navigation from './components/Navigation.jsx'
+// Pages y Components
 import { DragDrop, DragAndDrop, Navigation } from './components'
 import { NotFoundPage } from './pages/NotFoundPage.jsx'
-
-//import '../node_modules/bootstrap/dist/css/bootstrap.css'
+// Styles
 import './App.css'
 
 export default class App extends Component {
