@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import reactLogo from '../assets/react.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faGears, faBars } from '@fortawesome/free-solid-svg-icons'
 
 export class Navigation extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-sm navbar-light bg-light">
+      <nav className="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
 
         <div>
-          <Link to="/" className="navbar-brand">
-            <FontAwesomeIcon icon="fa-solid fa-home" />
+          <Link to="/" className="navbar-brand my-auto">
+            Portafolio <img src={reactLogo} className="logo-react" alt="React-logo"/>
           </Link>
           <button 
             className="navbar-toggler" type="button" 
@@ -48,11 +49,11 @@ export class Navigation extends Component {
           <ul className="navbar-nav text-right mx-auto">
             <li className="nav-item">
               <Link className="nav-link" to="/" >
-                DragDrop_1
+                Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/drag-drop">DragDrop_2</Link>
+              <Link className="nav-link" to="/console">Console</Link>
             </li>
           </ul>
           <ul className="navbar-nav text-right">

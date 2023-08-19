@@ -1,3 +1,8 @@
+/* General */
+body{ 
+  margin: 0 !important;
+}
+
 /* DragDrop */
 .container-drag {
   text-align: center;
@@ -26,13 +31,42 @@ li {
 }
 
 /* Navigation */
-li a:hover {
+/* li a:hover {
   border-bottom: 1px solid rgb(150,30,200) !important;
-  /* text-decoration: unset !important; */
   color: rgb(150,30,200) !important;
   font-weight: 300 !important;
 }
 li a {
   display: inline-block !important;
+} */
+
+/* Navigation - Logo */
+.logo-react {
+  height: 20px;
+  padding: 0;
 }
 
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo-react {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* main{
+  padding-top: 58px;
+  height: 100vh;
+} */
+
+/* section {
+  padding-top: 58px;
+  height: 100vh;
+} */

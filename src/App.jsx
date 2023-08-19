@@ -2,8 +2,8 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // Pages y Components
-import { DragDrop, DragAndDrop, Navigation } from './components'
-import { NotFoundPage } from './pages/NotFoundPage.jsx'
+import { Navigation, SideBar } from './components'
+import { NotFoundPage, HomePage, RegisterPage, LoginPage } from './pages'
 // Styles
 import './App.css'
 
@@ -12,16 +12,12 @@ export default class App extends Component {
     return (
       <>
         <BrowserRouter>
-          <header className='container-fluid'>
-            <Navigation />
-          </header>
-          <main className="container my-2 py-2">
             <Routes>
-              <Route path='/' element={<DragDrop />} />
-              <Route path='/drag-drop' element={<DragAndDrop />} />
+              <Route path='/' element={<HomePage />} />
+              <Route path='/login' element={<LoginPage />} />
+              <Route path='/register' element={<RegisterPage />} />
               <Route path="*" element={<NotFoundPage/>}/>
             </Routes>
-          </main>
         </BrowserRouter>
       </>
     )
