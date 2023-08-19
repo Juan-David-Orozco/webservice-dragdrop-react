@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 export class DragDrop extends Component {
-
   constructor(props){
     super(props);
     const min=7;

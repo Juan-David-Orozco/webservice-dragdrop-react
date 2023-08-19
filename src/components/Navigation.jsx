@@ -9,7 +9,9 @@ export class Navigation extends Component {
       <nav className="navbar navbar-expand-sm navbar-light bg-light">
 
         <div>
-          <Link to="/" className="navbar-brand">DragDrop</Link>
+          <Link to="/" className="navbar-brand">
+            <FontAwesomeIcon icon="fa-solid fa-home" />
+          </Link>
           <button 
             className="navbar-toggler" type="button" 
             data-toggle="collapse" data-target="#navbarNav" 

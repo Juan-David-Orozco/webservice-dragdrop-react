@@ -1,7 +1,9 @@
+/* DragDrop */
 .container-drag {
   text-align: center;
 }
 
+/* DragAndDrop */
 li.colocaraqui { 
   background: rgb(40, 30, 190);
   border: dashed 1px #000;
@@ -12,12 +14,10 @@ li.colocaraqui:before {
   /* color: #f3e30a; */
   color: #da2310;
 }
-
 ul {
   list-style: none; 
   margin:0; padding:0
 }
-
 li {
   padding: 5px; 
   /*background:#eee; */
@@ -25,13 +25,13 @@ li {
   list-style-type: none;
 }
 
+/* Navigation */
 li a:hover {
-  border-bottom: 2px solid rgb(150,30,200) !important;
+  border-bottom: 1px solid rgb(150,30,200) !important;
   /* text-decoration: unset !important; */
   color: rgb(150,30,200) !important;
-  font-weight: 600 !important;
+  font-weight: 300 !important;
 }
-
 li a {
   display: inline-block !important;
 }
