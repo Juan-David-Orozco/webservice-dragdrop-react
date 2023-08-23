@@ -81,6 +81,6 @@ li a {
 
 
 /*  SideBar  */
-.sidebar-subnav li {
+.sidebar-subnav li, .sidebar-subnav a {
   padding: 0px;
 }
