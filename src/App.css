@@ -42,7 +42,7 @@ li a {
 
 /* Navigation - Logo */
 .logo-react {
-  height: 20px;
+  height: 25px;
   padding: 0;
 }
 
@@ -57,16 +57,30 @@ li a {
 
 @media (prefers-reduced-motion: no-preference) {
   .logo-react {
-    animation: logo-spin infinite 20s linear;
+    animation: logo-spin infinite 15s linear;
   }
 }
+
+/* #navbarNav {
+  display: flex !important;
+  flex-direction: row !important;
+} */
 
 /* main{
   padding-top: 58px;
   height: 100vh;
 } */
 
-/* section {
-  padding-top: 58px;
+/* main {
   height: 100vh;
 } */
+
+.main-container {
+  height: 100vh;
+}
+
+
+/*  SideBar  */
+.sidebar-subnav li {
+  padding: 0px;
+}

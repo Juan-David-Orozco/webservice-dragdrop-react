@@ -7,22 +7,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export class Navigation extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+      <>
 
-        <div>
+        <div className='d-flex justify-content-around flex-row w-100'>
           <Link to="/" className="navbar-brand my-auto">
-            Portafolio <img src={reactLogo} className="logo-react" alt="React-logo"/>
+            <span className='d-none d-sm-inline'>Portafolio </span>
+            <img src={reactLogo} className="logo-react my-auto" alt="React-logo"/>
           </Link>
-          <button 
-            className="navbar-toggler" type="button" 
-            data-toggle="collapse" data-target="#navbarNav" 
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
-          >
-            <FontAwesomeIcon icon="fa-solid fa-bars" />
-          </button>
-        </div>
-
-        <div>
           <ul className='d-flex flex-row justify-content-aroud'>
             <li className="nav-item my-auto dropdown">
               <Link
@@ -43,20 +34,29 @@ export class Navigation extends Component {
               </Link>
             </li>
           </ul>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <FontAwesomeIcon icon="fa-solid fa-bars" />
+          </button>
         </div>
 
-        <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-          <ul className="navbar-nav text-right mx-auto">
+        <div className="collapse navbar-collapse text-right w-100" id="navbarNav">
+          <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/" >
-                Home
-              </Link>
+              <Link className="nav-link" to="/">Home</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/console">Console</Link>
             </li>
           </ul>
-          <ul className="navbar-nav text-right">
+          <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="nav-link" to="/login">Login</Link>
             </li>
@@ -66,7 +66,7 @@ export class Navigation extends Component {
           </ul>
         </div>
 
-      </nav>
+      </>
     )
   }
 }

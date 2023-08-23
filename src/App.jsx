@@ -2,7 +2,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // Pages y Components
-import { Navigation, SideBar } from './components'
 import { NotFoundPage, HomePage, RegisterPage, LoginPage } from './pages'
 // Styles
 import './App.css'
