@@ -3,7 +3,50 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
 
 export class SideBar extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      pestanaActiva: this.props.activa
+    };
+  }
+
+  manejoOnClick = (e) => {
+    this.setState({
+      pestanaActiva:Number(e.target.id)
+    });
+  }
+
+  shouldComponentUpdate(nextProps, nextState){
+    return (this.state.pestanaActiva !== nextState.pestanaActiva)
+  }
+
   render() {
+    const pestanas = this.props.pestanas.map((pestana, index) => {
+      const activa = index === this.state.pestanaActiva ? 'active' : '';
+      return (
+        <div className={"sidebar-item my-1 w-100 "+activa} key={index} >
+          <Link 
+            className={"sidebar-link px-0 py-1 px-md-2 btn btn-link "+activa}
+            to={"/#"}
+            id={index} onClick={this.manejoOnClick.bind()}
+          >
+            {pestana.nombre}
+          </Link>
+          <ul className={'navbar-nav flex-column sidebar-subnav'}>
+            {
+              pestana.submenus.map((submenu,index) => {
+                return (
+                <li className={"nav-item"} key={index}>
+                  <Link to={submenu.redirect} className="nav-link">{submenu.title}</Link>
+                </li>)
+            })
+            }
+          </ul>
+        </div>
+      )
+    })
+
     return (
       <>
         <form className="form d-flex p-2 my-2 mx-auto justify-content-center">
@@ -23,6 +66,10 @@ export class SideBar extends Component {
         <div className='navbar navbar-expand-md text-left'>
           <nav className="collapse navbar-collapse flex-column sidebar-links" id="SideBar">
 
+            {pestanas}
+
+
+{/* 
             <div className="sidebar-item active my-1 w-100">
               <Link to={"/Start"} className="sidebar-link font-weight-bold px-0 py-1 px-md-2 btn btn-link" >
                 Get started
@@ -73,6 +120,26 @@ export class SideBar extends Component {
                 </li>
               </ul>
             </div>
+
+            <div className="sidebar-item my-1 w-100">
+              <Link to={"/Content"} className="sidebar-link font-weight-bold px-0 py-1 px-md-2 btn btn-link" >
+                Content
+              </Link>
+              <ul className='navbar-nav flex-column sidebar-subnav'>
+                <li className="nav-item active">
+                  <Link to={"/reboot"} className="nav-link">Reboot</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to={"/typography"} className="nav-link">Typography</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to={"/code"} className="nav-link">Code</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to={"/images"} className="nav-link">Images</Link>
+                </li>
+              </ul>
+            </div> */}
 
           </nav>
         </div>

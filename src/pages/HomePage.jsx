@@ -3,6 +3,18 @@ import { Main, NavAux, SideBar } from '../components/HomePage'
 import { Navigation } from '../components'
 
 export class HomePage extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      sidebar: this.props.sidebar
+    };
+  }
+
+  componentDidMount() {
+    console.log(this.state.sidebar)
+  }
+
   render() {
     return (
       <>
@@ -13,7 +25,7 @@ export class HomePage extends Component {
           <main className='h-100'>
             <div className="row flex-xl-nowrap mx-auto">
               <section className="col-12 col-md-3 col-xl-2 border border-info">
-                <SideBar />
+                <SideBar pestanas={this.state.sidebar} activa={0} />
               </section>
               <section className="col-12 col-md-9 col-xl-8 bg-primary" role='main'>
                 <Main />
