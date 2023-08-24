@@ -1,49 +1,53 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Link } from 'react-router-dom'
+import { NavName } from './NavName'
+// import { Link } from 'react-router-dom'
 
 export class SideBar extends Component {
 
   constructor(props){
     super(props);
     this.state = {
-      pestanaActiva: this.props.activa
-    };
+      selected: this.props.activa
+    }
   }
 
-  manejoOnClick = (e) => {
+  navsUpdate = (navSelected) => {
     this.setState({
-      pestanaActiva:Number(e.target.id)
-    });
-  }
-
-  shouldComponentUpdate(nextProps, nextState){
-    return (this.state.pestanaActiva !== nextState.pestanaActiva)
+      selected: navSelected.props.navIndex
+    })
   }
 
   render() {
     const pestanas = this.props.pestanas.map((pestana, index) => {
-      const activa = index === this.state.pestanaActiva ? 'active' : '';
       return (
-        <div className={"sidebar-item my-1 w-100 "+activa} key={index} >
-          <Link 
-            className={"sidebar-link px-0 py-1 px-md-2 btn btn-link "+activa}
-            to={"/#"}
-            id={index} onClick={this.manejoOnClick.bind()}
-          >
-            {pestana.nombre}
-          </Link>
-          <ul className={'navbar-nav flex-column sidebar-subnav'}>
-            {
-              pestana.submenus.map((submenu,index) => {
-                return (
-                <li className={"nav-item"} key={index}>
-                  <Link to={submenu.redirect} className="nav-link">{submenu.title}</Link>
-                </li>)
-            })
-            }
-          </ul>
-        </div>
+        <NavName 
+          key={index} navIndex={index}
+          active={this.state.selected == index ? 'active': ''}
+          navsUpdate={this.navsUpdate}
+        >
+          {pestana.nombre}
+        </NavName>
+        // <div className={"sidebar-item my-1 w-100 "} key={index} >
+        //   <Link 
+        //     className={"sidebar-link px-0 py-1 px-md-2 btn btn-link "+activa}
+        //     tabIndex={index} key={index}
+        //     to={"/#"}
+        //     id={index} onClick={this.manejoOnClick.bind()}
+        //   >
+        //     {pestana.nombre}
+        //   </Link>
+        //   <ul className={'navbar-nav flex-column sidebar-subnav'}>
+        //     {
+        //       pestana.submenus.map((submenu,i) => {
+        //         return (
+        //         <li className={"nav-item"} key={i}>
+        //           <Link to={submenu.redirect} className="nav-link">{submenu.title}</Link>
+        //         </li>)
+        //     })
+        //     }
+        //   </ul>
+        // </div>
       )
     })
 
@@ -65,82 +69,7 @@ export class SideBar extends Component {
         </form>
         <div className='navbar navbar-expand-md text-left'>
           <nav className="collapse navbar-collapse flex-column sidebar-links" id="SideBar">
-
             {pestanas}
-
-
-{/* 
-            <div className="sidebar-item active my-1 w-100">
-              <Link to={"/Start"} className="sidebar-link font-weight-bold px-0 py-1 px-md-2 btn btn-link" >
-                Get started
-              </Link>
-              <ul className='navbar-nav flex-column sidebar-subnav'>
-                <li className="nav-item active">
-                  <Link to={"/intro"} className="nav-link">Introduction</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to={"/download"} className="nav-link">Dowload</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to={"/content"} className="nav-link">Content</Link>
-                </li>
-              </ul>
-            </div>
-
-            <div className="sidebar-item my-1 w-100">
-              <Link to={"/Layout"} className="sidebar-link font-weight-bold px-0 py-1 px-md-2 btn btn-link" >
-                Layout
-              </Link>
-              <ul className='navbar-nav flex-column sidebar-subnav'>
-                <li className="nav-item active">
-                  <Link to={"/overview"} className="nav-link">Overview</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to={"/grid"} className="nav-link">Grid</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to={"/utilities"} className="nav-link">Utilities</Link>
-                </li>
-              </ul>
-            </div>
-
-            <div className="sidebar-item my-1 w-100">
-              <Link to={"/Components"} className="sidebar-link font-weight-bold px-0 py-1 px-md-2 btn btn-link" >
-                Components
-              </Link>
-              <ul className='navbar-nav flex-column sidebar-subnav'>
-                <li className="nav-item active">
-                  <Link to={"/alert"} className="nav-link">Alert</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to={"/badge"} className="nav-link">Badge</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to={"/dropdowns"} className="nav-link">Dropdowns</Link>
-                </li>
-              </ul>
-            </div>
-
-            <div className="sidebar-item my-1 w-100">
-              <Link to={"/Content"} className="sidebar-link font-weight-bold px-0 py-1 px-md-2 btn btn-link" >
-                Content
-              </Link>
-              <ul className='navbar-nav flex-column sidebar-subnav'>
-                <li className="nav-item active">
-                  <Link to={"/reboot"} className="nav-link">Reboot</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to={"/typography"} className="nav-link">Typography</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to={"/code"} className="nav-link">Code</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to={"/images"} className="nav-link">Images</Link>
-                </li>
-              </ul>
-            </div> */}
-
           </nav>
         </div>
       </>
