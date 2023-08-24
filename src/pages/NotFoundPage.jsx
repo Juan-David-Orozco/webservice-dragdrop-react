@@ -3,9 +3,17 @@ import React, { Component } from 'react'
 export class NotFoundPage extends Component {
   render() {
     return (
-      <section className='text-center align-items-center h-100'>
-        NotFoundPage
-      </section>
+      <>
+        <div className='container-fluid main-container px-0'>
+          <main className='h-100'>
+            <div className="row text-center mx-auto h-100 border border-info">
+              <section className="col-12 col-md-10 col-xl-8 bg-warning mx-auto">
+                NotFoundPage
+              </section>
+            </div>
+          </main>
+        </div>
+      </>
     )
   }
 }
