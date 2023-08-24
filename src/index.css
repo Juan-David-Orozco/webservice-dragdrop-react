@@ -1,0 +1,8 @@
+/* General */
+body{ 
+  margin: 0 !important;
+}
+
+.main-container {
+  height: 100vh;
+}

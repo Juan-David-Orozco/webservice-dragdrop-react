@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Main, NavAux, SideBar } from '../components/HomePage'
-import { Navigation } from '../components'
+import { Navigation } from '../components/indexComponents'
 
 export class HomePage extends Component {
 
@@ -32,7 +32,6 @@ export class HomePage extends Component {
         <div className='container-fluid main-container px-0'>
           <main className='h-100'>
             <div className="row flex-xl-nowrap mx-auto">
-
               <section className="col-12 col-md-3 col-xl-2 border border-info">
                 <SideBar 
                   pestanas={this.state.navs} 
@@ -40,14 +39,12 @@ export class HomePage extends Component {
                   navsUpdateHome={this.navsUpdateHome}
                 />
               </section>
-
               <section className="col-12 col-md-9 col-xl-8 border border-success" role='main'>
                 <Main 
                   pestanas={this.state.navs} 
                   activa={this.state.selected} 
                 />
               </section>
-
               <section className="d-none d-xl-block col-xl-2 bg-secondary">
                 <NavAux />
               </section>

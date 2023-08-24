@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { NavName } from './NavName'
-// import { Link } from 'react-router-dom'
 
 export class SideBar extends Component {
 

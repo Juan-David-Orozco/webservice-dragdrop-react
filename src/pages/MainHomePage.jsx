@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { HomePage } from './HomePage'
-import { DragDrop, DragAndDrop } from '../components'
+import { DragDrop, DragAndDrop } from '../components/HomePage/'
 
 export class MainHomePage extends Component {
   render() {

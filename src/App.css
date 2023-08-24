@@ -1,8 +1,3 @@
-/* General */
-body{ 
-  margin: 0 !important;
-}
-
 /* DragDrop */
 .container-drag {
   text-align: center;
@@ -31,22 +26,7 @@ li {
 }
 
 /* Navigation */
-/* li a:hover {
-  border-bottom: 1px solid rgb(150,30,200) !important;
-  color: rgb(150,30,200) !important;
-  font-weight: 300 !important;
-}
-li a {
-  display: inline-block !important;
-} */
-
-/* Navigation - Logo */
-.logo-react {
-  height: 25px;
-  padding: 0;
-}
-
-@keyframes logo-spin {
+@keyframes logo-react-spin {
   from {
     transform: rotate(0deg);
   }
@@ -57,28 +37,9 @@ li a {
 
 @media (prefers-reduced-motion: no-preference) {
   .logo-react {
-    animation: logo-spin infinite 15s linear;
+    animation: logo-react-spin infinite 20s linear;
   }
 }
-
-/* #navbarNav {
-  display: flex !important;
-  flex-direction: row !important;
-} */
-
-/* main{
-  padding-top: 58px;
-  height: 100vh;
-} */
-
-/* main {
-  height: 100vh;
-} */
-
-.main-container {
-  height: 100vh;
-}
-
 
 /*  SideBar  */
 .sidebar-subnav li, .sidebar-subnav a {
