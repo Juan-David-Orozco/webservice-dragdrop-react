@@ -8,7 +8,7 @@ export class NavName extends Component {
       <div className={"sidebar-item my-1 w-100 "+this.props.active}>
         <Link
           className={"sidebar-link px-0 py-1 px-md-2 btn btn-link " + this.props.active}
-          id={this.props.tabIndex} to={'#'}
+          id={this.props.navIndex} to={'#'}
           onClick={() => navsUpdate(this)}
         >
           {this.props.children}

@@ -8,13 +8,19 @@ export class HomePage extends Component {
     super(props);
     this.state = {
       navs: this.props.navs,
-      activa: this.props.navIndexActive
+      selected: this.props.navIndexActive
     };
   }
 
   componentDidMount() {
     console.log(this.state.navs)
-    console.log(this.state.activa)
+    console.log(this.state.selected)
+  }
+
+  navsUpdateHome = (navSelected) => {
+    this.setState({
+      selected: navSelected.props.navIndex
+    })
   }
 
   render() {
@@ -28,11 +34,18 @@ export class HomePage extends Component {
             <div className="row flex-xl-nowrap mx-auto">
 
               <section className="col-12 col-md-3 col-xl-2 border border-info">
-                <SideBar pestanas={this.state.navs} activa={this.state.activa} />
+                <SideBar 
+                  pestanas={this.state.navs} 
+                  activa={this.state.selected}
+                  navsUpdateHome={this.navsUpdateHome}
+                />
               </section>
 
-              <section className="col-12 col-md-9 col-xl-8 bg-primary" role='main'>
-                <Main pestanas={this.state.navs} activa={this.state.activa} />
+              <section className="col-12 col-md-9 col-xl-8 border border-success" role='main'>
+                <Main 
+                  pestanas={this.state.navs} 
+                  activa={this.state.selected} 
+                />
               </section>
 
               <section className="d-none d-xl-block col-xl-2 bg-secondary">

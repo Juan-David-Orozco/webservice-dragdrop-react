@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
 import { HomePage } from './HomePage'
-//import { DragDrop, DragAndDrop } from '../components'
+import { DragDrop, DragAndDrop } from '../components'
 
 export class MainHomePage extends Component {
   render() {
-    // const dragdrop = <DragDrop />
-    // const draganddrop = <DragAndDrop />
     const sideBar = [
       {
         nombre:'Get Started',
-        contenido: 'Contenido de la pestaña 1',
+        contenido: <DragDrop />,
         submenus: [
           {title: "Introduction",redirect:"/overview"},
           {title: "Donwload",redirect:"/donwload"},
@@ -18,7 +16,7 @@ export class MainHomePage extends Component {
       },
       {
         nombre: 'Layout',
-        contenido: 'Contenido de la pestaña 2',
+        contenido: <DragAndDrop />,
         submenus: [
           {title: "Overview",redirect:"/overview"},
           {title: "Grid",redirect:"/grid"},

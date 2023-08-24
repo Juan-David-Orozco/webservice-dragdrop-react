@@ -5,17 +5,8 @@ import { NavName } from './NavName'
 
 export class SideBar extends Component {
 
-  constructor(props){
-    super(props);
-    this.state = {
-      selected: this.props.activa
-    }
-  }
-
   navsUpdate = (navSelected) => {
-    this.setState({
-      selected: navSelected.props.navIndex
-    })
+    this.props.navsUpdateHome(navSelected)
   }
 
   render() {
@@ -23,7 +14,7 @@ export class SideBar extends Component {
       return (
         <NavName 
           key={index} navIndex={index}
-          active={this.state.selected == index ? 'active': ''}
+          active={this.props.activa == index ? 'active': ''}
           navsUpdate={this.navsUpdate}
         >
           {pestana.nombre}
@@ -50,7 +41,6 @@ export class SideBar extends Component {
         // </div>
       )
     })
-
     return (
       <>
         <form className="form d-flex p-2 my-2 mx-auto justify-content-center">
@@ -75,4 +65,5 @@ export class SideBar extends Component {
       </>
     )
   }
+
 }
