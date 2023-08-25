@@ -11,33 +11,13 @@ export class SideBar extends Component {
   render() {
     const pestanas = this.props.pestanas.map((pestana, index) => {
       return (
-        <NavName 
-          key={index} navIndex={index}
-          active={this.props.activa == index ? 'active': ''}
-          navsUpdate={this.navsUpdate}
+        <NavName
+          navIndex={index} key={index}
+          active={this.props.activa == index ? 'active' : ''}
+          navsUpdate={this.navsUpdate} pestana={pestana}
         >
           {pestana.nombre}
         </NavName>
-        // <div className={"sidebar-item my-1 w-100 "} key={index} >
-        //   <Link 
-        //     className={"sidebar-link px-0 py-1 px-md-2 btn btn-link "+activa}
-        //     tabIndex={index} key={index}
-        //     to={"/#"}
-        //     id={index} onClick={this.manejoOnClick.bind()}
-        //   >
-        //     {pestana.nombre}
-        //   </Link>
-        //   <ul className={'navbar-nav flex-column sidebar-subnav'}>
-        //     {
-        //       pestana.submenus.map((submenu,i) => {
-        //         return (
-        //         <li className={"nav-item"} key={i}>
-        //           <Link to={submenu.redirect} className="nav-link">{submenu.title}</Link>
-        //         </li>)
-        //     })
-        //     }
-        //   </ul>
-        // </div>
       )
     })
     return (

@@ -24,11 +24,11 @@ export class HomePage extends Component {
 
   render() {
     return (
-      <>        
+      <>
         <div className='container-fluid main-container px-0'>
           <main className='h-100'>
             <div className="row flex-xl-nowrap mx-auto">
-              <section className="col-12 col-md-3 col-xl-2">
+              <section className="col-12 col-md-3 col-xl-2" id="SideBarContainer">
                 <SideBar 
                   pestanas={this.state.navs} 
                   activa={this.state.selected}

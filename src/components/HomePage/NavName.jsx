@@ -13,16 +13,17 @@ export class NavName extends Component {
         >
           {this.props.children}
         </Link>
-        {/* <ul className={'navbar-nav flex-column sidebar-subnav'}>
-            {
-              pestana.submenus.map((submenu,i) => {
-                return (
+        <ul className={'navbar-nav flex-column sidebar-subnav'}>
+          {
+            this.props.pestana.submenus.map((submenu, i) => {
+              return (
                 <li className={"nav-item"} key={i}>
-                  <Link to={submenu.redirect} className="nav-link">{submenu.title}</Link>
+                  <Link className="nav-link">{submenu.title}</Link>
                 </li>)
             })
-            }
-          </ul> */}
+          }
+          {/* <li><Link className="nav-link">Submenu1</Link></li> */}
+        </ul>
       </div>
     )
   }

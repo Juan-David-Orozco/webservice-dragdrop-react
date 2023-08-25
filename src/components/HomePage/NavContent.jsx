@@ -7,7 +7,7 @@ export class NavContent extends Component {
         className={"tab-pane fade "+this.props.active}
         id={this.props.navIndex} role="tabpanel"
       >
-        <p>{this.props.children}</p>
+        <>{this.props.children}</>
       </div>
     )
   }
