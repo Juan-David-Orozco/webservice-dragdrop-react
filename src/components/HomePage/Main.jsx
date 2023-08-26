@@ -14,9 +14,9 @@ export class Main extends Component {
       )
     })
     return (
-      <div className="row justify-content-center text-center py-2 mx-auto no-gutters">
-        <div className="col-12 ">
-          <div className="tab-content border m-1 p-2" id="tabContent">
+      <div className="row justify-content-center text-center p-1 mx-auto no-gutters">
+        <div className="col-12 border border-info">
+          <div className="tab-content m-1" id="tabContent">
             {contenido}
           </div>
         </div>

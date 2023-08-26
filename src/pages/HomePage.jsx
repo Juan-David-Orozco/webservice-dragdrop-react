@@ -27,7 +27,7 @@ export class HomePage extends Component {
       <>
         <div className='container-fluid main-container px-0'>
           <main className='h-100'>
-            <div className="row flex-xl-nowrap mx-auto">
+            <div className="row flex-xl-nowrap mx-auto no-gutters">
               <section className="col-12 col-md-3 col-xl-2" id="SideBarContainer">
                 <SideBar 
                   pestanas={this.state.navs} 
@@ -35,7 +35,7 @@ export class HomePage extends Component {
                   navsUpdateHome={this.navsUpdateHome}
                 />
               </section>
-              <section className="col-12 col-md-9 col-xl-8" role='main'>
+              <section className="col-12 col-md-9 col-xl-8 bg-light" role='main'>
                 <Main 
                   pestanas={this.state.navs} 
                   activa={this.state.selected} 

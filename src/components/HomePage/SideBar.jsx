@@ -36,8 +36,8 @@ export class SideBar extends Component {
             <FontAwesomeIcon icon="fa-solid fa-list" />
           </button>
         </form>
-        <div className='navbar navbar-expand-md text-left'>
-          <nav className="collapse navbar-collapse flex-column sidebar-links" id="SideBar">
+        <div className='navbar navbar-expand-md text-left py-2 px-0'>
+          <nav className="collapse navbar-collapse flex-column sidebar-links pl-3 mr-1" id="SideBar">
             {pestanas}
           </nav>
         </div>
